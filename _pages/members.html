@@ -21,15 +21,21 @@ permalink: /members/
         <h3>{{ member.name }}</h3>
         <p class="member-role">{{ member.role }}</p>
 
-        <p class="member-affiliation">
-          {{ member.affiliation }}
-        </p>
+        {% if member.affiliation %}
+          <p class="member-affiliation">
+            {{ member.affiliation }}
+          </p>
+        {% endif %}
 
-        <p class="member-bio">
-          "
-          {{ member.bio }}
-          "
-        </p>
+        <div class="member-bio-wrapper">
+          <p class="member-bio">
+            {{ member.bio }}
+          </p>
+        </div>
+
+        <button class="bio-toggle" aria-expanded="false">
+          Show bio
+        </button>
 
         <div class="member-links">
 
